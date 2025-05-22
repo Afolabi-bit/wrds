@@ -1,12 +1,17 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import AppContext from "../store/AppContext";
 import PlaySoundIcon from "../../public/assets/images/icon-play.svg";
+import Source from "../../public/assets/images/icon-new-window.svg";
 import WordMeaning from "../utilities/WordMeaning";
 
 const SearchResult = () => {
 	const { data, fontStyle } = useContext(AppContext);
 
+	const audioRef = useRef();
+
 	const word = data[0];
+
+	const firstAudio = word?.phonetics.find((p) => p.audio.trim() !== "").audio;
 
 	return (
 		<section className="w-full h-full">
@@ -28,15 +33,27 @@ const SearchResult = () => {
 					</p>
 				</div>
 				<div className="w-[48px] h-[48px] ">
-					<button className="w-full h-full ">
+					<button
+						onClick={() => {
+							audioRef.current.play();
+						}}
+						className="w-full h-full "
+					>
 						<img
 							className="w-full h-full "
 							src={PlaySoundIcon}
 							alt="play audio pronunciation"
 						/>
 					</button>
+					<audio
+						ref={audioRef}
+						src={firstAudio}
+						preload="auto"
+					></audio>
 				</div>
 			</div>
+
+			{/* Definitions, Synonyms, Antonyms, and Examples */}
 			{word?.meanings.map((meaning, index) => {
 				return (
 					<WordMeaning
@@ -45,6 +62,26 @@ const SearchResult = () => {
 					/>
 				);
 			})}
+
+			{/* Source */}
+			<footer className="border-t border-white3 pt-[24px] mt-[30px] mb-[85px]">
+				<p className="font-normal text-[14px] leading-[17px] underline text-white4 mb-[8px]  ">
+					Source
+				</p>
+				<a
+					href={`${word?.sourceUrls[0]}`}
+					target="_blank"
+					className="flex"
+				>
+					<span className="text-[14px] leading-[17px] underline text-black3 mr-[15px] ">
+						{word?.sourceUrls[0]}
+					</span>
+					<img
+						src={Source}
+						alt="Open new tab"
+					/>
+				</a>
+			</footer>
 		</section>
 	);
 };
