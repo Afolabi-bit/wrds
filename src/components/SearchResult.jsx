@@ -24,7 +24,7 @@ const SearchResult = () => {
 								: fontStyle === "Serif"
 								? "font-loraBold"
 								: "font-inconsolataBold"
-						} text-[32px] leading-[32px] text-black3`}
+						} text-[32px] leading-[32px] text-black3 dark:text-white1`}
 					>
 						{word?.word}
 					</h1>
@@ -64,7 +64,7 @@ const SearchResult = () => {
 			})}
 
 			{/* Source */}
-			<footer className="border-t border-white3 pt-[24px] mt-[30px] mb-[85px]">
+			<footer className="border-t border-white3 pt-[24px] mt-[30px] pb-[85px]">
 				<p className="font-normal text-[14px] leading-[17px] underline text-white4 mb-[8px]  ">
 					Source
 				</p>
@@ -73,7 +73,7 @@ const SearchResult = () => {
 					target="_blank"
 					className="flex"
 				>
-					<span className="text-[14px] leading-[17px] underline text-black3 mr-[15px] ">
+					<span className="text-[14px] leading-[17px] underline text-black3 dark:text-white1 mr-[15px] ">
 						{word?.sourceUrls[0]}
 					</span>
 					<img

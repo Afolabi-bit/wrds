@@ -11,6 +11,7 @@ export const AppContextProvider = ({ children }) => {
 	const [fontStyle, setFontStyle] = useState("Sans Serif");
 	const [searchString, setSearchString] = useState("keyboard");
 	const [data, setData] = useState([]);
+	const [isDark, setIsDark] = useState(false);
 	const [error, setError] = useState({ code: "", message: "" });
 
 	function changeFont(font) {
@@ -58,6 +59,8 @@ export const AppContextProvider = ({ children }) => {
 				changeFont,
 				handleSearchString,
 				data,
+				isDark,
+				setIsDark,
 			}}
 		>
 			{children}

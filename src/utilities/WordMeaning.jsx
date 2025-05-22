@@ -3,17 +3,20 @@ import Oval from "../../public/assets/images/Oval.svg";
 
 function SynonymsAndAntonyms({ indicator, arr }) {
 	return (
-		<div>
-			<p className="inline-block text-[16px] leading-[19px] text-white4 mr-[24px]">
+		<div className="flex items-start mb-[10px]">
+			<p className="inline-block text-[16px] leading-[19px] text-white4 mr-[24px]  ">
 				{indicator}
 			</p>
 			<p className="inline-flex flex-wrap">
 				{arr.map((item, index) => {
 					return (
 						<span
-							className="font-bold text-[16px] leading-[19px] text-myPurple "
+							className="font-bold text-[16px] leading-[19px] text-myPurple mr-[5px]"
 							key={index}
-						>{`${arr.length - 1 !== index ? `${item}, ` : `${item}`}`}</span>
+						>
+							{item}
+							{index !== arr.length - 1 && ", "}
+						</span>
 					);
 				})}
 			</p>
@@ -31,7 +34,7 @@ function Meaning({ definition }) {
 					alt=""
 				/>
 				<div>
-					<p className="text-black3 text-[15px] leading-[24px] ">
+					<p className="text-black3 dark:text-white1 text-[15px] leading-[24px] ">
 						{definition.definition}
 					</p>
 					{definition.synonyms.length !== 0 && (
@@ -59,7 +62,7 @@ function WordMeaning({ word }) {
 	return (
 		<article>
 			<div className="flex gap-[11px] mt-[28px] mb-[31px]">
-				<p className="text-[18px] font-[700] leading-[23px] text-black3 ">
+				<p className="text-[18px] font-[700] leading-[23px] text-black3 dark:text-white1 ">
 					{word.partOfSpeech}
 				</p>
 				<img
@@ -68,7 +71,7 @@ function WordMeaning({ word }) {
 				/>
 			</div>
 			<>
-				<p className="font-normal text-[16px] leading-[20px] text-white4 mb-[16px] ">
+				<p className="font-normal text-[16px] leading-[20px] text-white4 dark:text-white4 mb-[16px] ">
 					Meaning
 				</p>
 				<>
@@ -91,7 +94,7 @@ function WordMeaning({ word }) {
 				{word.antonyms.length !== 0 && (
 					<SynonymsAndAntonyms
 						indicator={"Antonyms"}
-						arr={word.synonyms}
+						arr={word.antonyms}
 					/>
 				)}
 			</>

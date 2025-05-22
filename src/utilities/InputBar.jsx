@@ -22,11 +22,11 @@ const InputBar = () => {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="w-full h-[48px] rounded-[16px] bg-white2 relative  "
+			className="w-full h-[48px] rounded-[16px] bg-white2 dark:bg-black2 relative  "
 		>
 			<input
 				autoComplete="off"
-				className={` w-full h-full bg-transparent text-[16px] leading-[19px] text-black3 font-[700] placeholder:text-black3 placeholder:text-[16px] placeholder:font-[700] px-[24px] focus:outline ${
+				className={` w-full h-full bg-transparent text-[16px] leading-[19px] text-black3 dark:text-white1 font-[700] placeholder:text-black3 placeholder:text-[16px] dark:placeholder:text-white1 placeholder:font-[700] px-[24px] focus:outline ${
 					isEmpty
 						? " border border-myRed outline-none"
 						: "focus:outline-myPurple"

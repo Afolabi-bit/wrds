@@ -17,7 +17,7 @@ const FontSelector = () => {
 				className="flex w-full justify-end"
 			>
 				<span
-					className={`font-[700] not-italic text-[14px] leading-[24px] text-black3 mr-[9px] ${
+					className={`font-[700] not-italic text-[14px] leading-[24px] text-black3 dark:text-white1 mr-[9px] ${
 						fontStyle === "Sans Serif"
 							? "font-interBold"
 							: fontStyle === "Serif"
