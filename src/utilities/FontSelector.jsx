@@ -40,14 +40,14 @@ const FontSelector = () => {
 				}}
 				className={`w-[116px] h-[95px] pl-[13px] py-[10px] bg-white1 absolute top-[32px] right-[0px] z-50 rounded-[13px] ${
 					openSelect ? "flex" : "hidden"
-				} flex-col justify-between gap-[1px] md:w-[136px] md:h-[105px] md:hidden `}
+				} flex-col justify-between gap-[1px] md:w-[136px] md:h-[105px] lg:w-[183px] lg:h-[152px] lg:rounded-[16px] `}
 			>
 				<button
 					onClick={() => {
 						handleOpenselect();
 						changeFont("Sans Serif");
 					}}
-					className="font-interBold w-full text-left text-[14px] hover:text-myPurple "
+					className="font-interBold w-full text-left text-[14px] hover:text-myPurple lg:text-[18px] lg:leading-[24px] "
 				>
 					Sans Serif
 				</button>
@@ -56,7 +56,7 @@ const FontSelector = () => {
 						handleOpenselect();
 						changeFont("Serif");
 					}}
-					className="font-loraBold w-full text-left text-[14px] hover:text-myPurple"
+					className="font-loraBold w-full text-left text-[14px] hover:text-myPurple lg:text-[18px] lg:leading-[24px]"
 				>
 					Serif
 				</button>
@@ -65,7 +65,7 @@ const FontSelector = () => {
 						handleOpenselect();
 						changeFont("Mono");
 					}}
-					className="font-inconsolataBold w-full text-left text-[14px] hover:text-myPurple"
+					className="font-inconsolataBold w-full text-left text-[14px] hover:text-myPurple lg:text-[18px] lg:leading-[24px]"
 				>
 					Mono
 				</button>

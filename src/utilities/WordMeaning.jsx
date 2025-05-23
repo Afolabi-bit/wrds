@@ -5,14 +5,14 @@ import PageBreakMd from "../../public/assets/images/pagebreak-md.svg";
 function SynonymsAndAntonyms({ indicator, arr }) {
 	return (
 		<div className="flex items-start mb-[10px]">
-			<p className="inline-block text-[16px] leading-[19px] text-white4 mr-[24px] md:text-[20px] md:leading-[24px] ">
+			<p className="inline-block text-[16px] leading-[19px] text-white4 mr-[24px] md:text-[20px] md:leading-[24px] lg:leading-[26px] ">
 				{indicator}
 			</p>
 			<p className="inline-flex flex-wrap">
 				{arr.map((item, index) => {
 					return (
 						<span
-							className="font-bold text-[16px] leading-[19px] text-myPurple mr-[5px] md:text-[20px] md:leading-[24px] "
+							className="font-bold text-[16px] leading-[19px] text-myPurple mr-[5px] md:text-[20px] md:leading-[24px] lg:leading-[26px] "
 							key={index}
 						>
 							{item}
@@ -76,7 +76,7 @@ function WordMeaning({ word }) {
 				/>
 			</div>
 			<>
-				<p className="font-normal text-[16px] leading-[20px] text-white4 dark:text-white4 mb-[16px] md:text-[20px] md:leading-[24px] ">
+				<p className="font-normal text-[16px] leading-[20px] text-white4 dark:text-white4 mb-[16px] md:text-[20px] md:leading-[24px] lg:leading-[26px] ">
 					Meaning
 				</p>
 				<>
