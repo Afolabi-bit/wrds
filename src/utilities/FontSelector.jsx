@@ -11,10 +11,10 @@ const FontSelector = () => {
 		setOpenSelect((openSelect) => !openSelect);
 	}
 	return (
-		<div className="mr-[16px] text-right w-[98px] h-full relative">
+		<div className="mr-[16px] text-right w-[98px] h-full relative md:w-[148px] ">
 			<button
 				onClick={handleOpenselect}
-				className="flex w-full justify-end"
+				className="flex w-full justify-end  "
 			>
 				<span
 					className={`font-[700] not-italic text-[14px] leading-[24px] text-black3 dark:text-white1 mr-[9px] ${
@@ -23,7 +23,8 @@ const FontSelector = () => {
 							: fontStyle === "Serif"
 							? "font-loraBold"
 							: "font-inconsolataBold"
-					} `}
+					} 
+					md:text-[18px] `}
 				>
 					{fontStyle}
 				</span>
@@ -39,7 +40,7 @@ const FontSelector = () => {
 				}}
 				className={`w-[116px] h-[95px] pl-[13px] py-[10px] bg-white1 absolute top-[32px] right-[0px] z-50 rounded-[13px] ${
 					openSelect ? "flex" : "hidden"
-				} flex-col justify-between gap-[1px] `}
+				} flex-col justify-between gap-[1px] md:w-[136px] md:h-[105px] md:hidden `}
 			>
 				<button
 					onClick={() => {

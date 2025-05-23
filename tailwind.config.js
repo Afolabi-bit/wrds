@@ -30,7 +30,7 @@ export default {
 			center: true,
 			screens: {
 				sm: "327px",
-				md: "720px",
+				md: "689px",
 				lg: "960px",
 				xl: "1140px",
 				"2xl": "1320px",

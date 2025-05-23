@@ -4,7 +4,7 @@ import AppContext from "../store/AppContext";
 
 const InputBar = () => {
 	const inputRef = useRef();
-	const { handleSearchString, data } = useContext(AppContext);
+	const { handleSearchString, fontStyle } = useContext(AppContext);
 	const [isEmpty, setIsEmpty] = useState(null);
 
 	function handleSubmit(e) {
@@ -22,15 +22,23 @@ const InputBar = () => {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="w-full h-[48px] rounded-[16px] bg-white2 dark:bg-black2 relative  "
+			className="w-full h-[48px] rounded-[16px] bg-white2 dark:bg-black2 relative md:h-[64px]  "
 		>
 			<input
 				autoComplete="off"
-				className={` w-full h-full bg-transparent text-[16px] leading-[19px] text-black3 dark:text-white1 font-[700] placeholder:text-black3 placeholder:text-[16px] dark:placeholder:text-white1 placeholder:font-[700] px-[24px] focus:outline ${
-					isEmpty
-						? " border border-myRed outline-none"
-						: "focus:outline-myPurple"
-				} rounded-[16px] `}
+				className={` w-full h-full bg-transparent text-[16px] leading-[19px] text-black3 dark:text-white1 font-[700] placeholder:text-black3 placeholder:text-[16px] dark:placeholder:text-white1 placeholder:font-[700] px-[24px] focus:outline
+					${
+						fontStyle === "Sans Serif"
+							? "font-interBold"
+							: fontStyle === "Serif"
+							? "font-loraBold"
+							: "font-inconsolataBold"
+					}
+					${
+						isEmpty
+							? " border border-myRed outline-none"
+							: "focus:outline-myPurple"
+					} rounded-[16px] md:placeholder:text-[20px] md:text-[20px] `}
 				type="text"
 				name="word"
 				id="word"
@@ -43,7 +51,7 @@ const InputBar = () => {
 				alt="search icon"
 			/>
 			{isEmpty && (
-				<p className="absolute left-0 top-[50px] text-myRed text-[14px] leading-[18px] ">
+				<p className="absolute left-0 top-[50px] text-myRed text-[14px] leading-[18px] md:top-[70px] ">
 					Whoops, can't be empty
 				</p>
 			)}

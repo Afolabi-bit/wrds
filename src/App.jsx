@@ -9,6 +9,7 @@ function App() {
 		<main
 			className={`$bg-white1 px-[24px]
         dark:bg-black1
+		min-h-[100vh]
         ${
 					fontStyle === "Sans Serif"
 						? "font-interRegular"
