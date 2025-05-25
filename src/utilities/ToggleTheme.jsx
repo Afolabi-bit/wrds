@@ -21,7 +21,7 @@ const ToggleTheme = () => {
 				onClick={() => {
 					setIsDark((prev) => !prev);
 				}}
-				className="group w-[71.99px] h-full flex gap-[12px]"
+				className="group w-[71.99px] h-full flex gap-[12px] outline-none"
 			>
 				<span className="inline-block relative h-[20px] w-[40px] rounded-[10px] bg-white4 dark:bg-myPurple transition group-hover:bg-myPurple ">
 					<span className="absolute w-[14px] h-[14px] top-[3px] left-[3px] bg-white1 rounded-[50%] "></span>

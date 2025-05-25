@@ -9,7 +9,7 @@ const AppContext = createContext({
 export const AppContextProvider = ({ children }) => {
 	const [darkModeActive, setDarkModeActive] = useState(false);
 	const [fontStyle, setFontStyle] = useState("Sans Serif");
-	const [searchString, setSearchString] = useState("keyboard");
+	const [searchString, setSearchString] = useState("isybds");
 	const [data, setData] = useState([]);
 	const [isDark, setIsDark] = useState(false);
 	const [error, setError] = useState({ code: "", message: "" });
@@ -31,6 +31,8 @@ export const AppContextProvider = ({ children }) => {
 					`https://api.dictionaryapi.dev/api/v2/entries/en/${searchString}`,
 				);
 
+				setError({ code: "", message: "" });
+
 				if (!res.ok) {
 					// Throw an error with code and message
 					throw {
@@ -41,9 +43,11 @@ export const AppContextProvider = ({ children }) => {
 
 				const data = await res.json();
 				setData(data);
+				console.log(data);
 			} catch (err) {
 				// Access custom error info
 				console.error(`Error ${err.status}: ${err.message}`);
+				console.log(data);
 				setError({ code: err.status, msg: err.message });
 			}
 		}
@@ -61,6 +65,7 @@ export const AppContextProvider = ({ children }) => {
 				data,
 				isDark,
 				setIsDark,
+				error,
 			}}
 		>
 			{children}

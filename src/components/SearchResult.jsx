@@ -3,9 +3,10 @@ import AppContext from "../store/AppContext";
 import PlaySoundIcon from "../../public/assets/images/icon-play.svg";
 import Source from "../../public/assets/images/icon-new-window.svg";
 import WordMeaning from "../utilities/WordMeaning";
+import NotFound from "./NotFound";
 
 const SearchResult = () => {
-	const { data, fontStyle } = useContext(AppContext);
+	const { data, fontStyle, error } = useContext(AppContext);
 
 	const audioRef = useRef();
 
@@ -15,7 +16,7 @@ const SearchResult = () => {
 
 	return (
 		<>
-			{word?.word && (
+			{word?.word && !error.code && (
 				<section className="w-full h-full">
 					<div className="w-full h-[68px] flex justify-between items-center md:h-[114px]  ">
 						<div className="flex flex-col justify-between h-full">
@@ -39,7 +40,7 @@ const SearchResult = () => {
 								onClick={() => {
 									audioRef.current.play();
 								}}
-								className="w-full h-full "
+								className="w-full h-full outline-none"
 							>
 								<img
 									className="w-full h-full "
@@ -87,6 +88,7 @@ const SearchResult = () => {
 					</footer>
 				</section>
 			)}
+			{error.code && <NotFound />}
 		</>
 	);
 };
