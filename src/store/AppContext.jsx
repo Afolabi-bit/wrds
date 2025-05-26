@@ -9,7 +9,7 @@ const AppContext = createContext({
 export const AppContextProvider = ({ children }) => {
 	const [darkModeActive, setDarkModeActive] = useState(false);
 	const [fontStyle, setFontStyle] = useState("Sans Serif");
-	const [searchString, setSearchString] = useState("isybds");
+	const [searchString, setSearchString] = useState("keyboard");
 	const [data, setData] = useState([]);
 	const [isDark, setIsDark] = useState(false);
 	const [error, setError] = useState({ code: "", message: "" });
@@ -43,7 +43,6 @@ export const AppContextProvider = ({ children }) => {
 
 				const data = await res.json();
 				setData(data);
-				console.log(data);
 			} catch (err) {
 				// Access custom error info
 				console.error(`Error ${err.status}: ${err.message}`);
@@ -58,6 +57,7 @@ export const AppContextProvider = ({ children }) => {
 	return (
 		<AppContext
 			value={{
+				searchString,
 				darkModeActive,
 				fontStyle,
 				changeFont,
