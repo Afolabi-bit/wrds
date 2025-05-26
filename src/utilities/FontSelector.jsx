@@ -34,13 +34,11 @@ const FontSelector = () => {
 					alt="Select icon"
 				/>
 			</button>
+
 			<div
-				style={{
-					boxShadow: "0px 5px 30px rgba(0, 0, 0, 0.1)",
-				}}
-				className={`w-[116px] h-[95px] pl-[13px] py-[10px] bg-white1 absolute top-[32px] right-[0px] z-50 rounded-[13px] ${
+				className={`w-[116px] h-[95px] pl-[13px] py-[10px] bg-white1 absolute top-[32px] right-[0px] z-50 rounded-[13px] shadow-custom-black ${
 					openSelect ? "flex" : "hidden"
-				} flex-col justify-between gap-[1px] md:w-[136px] md:h-[105px] lg:w-[183px] lg:h-[152px] lg:rounded-[16px] `}
+				} flex-col justify-between gap-[1px] dark:shadow-custom-purple dark:bg-black2 dark:text-white1 md:w-[136px] md:h-[105px] md:p-[20px] lg:w-[183px] lg:h-[152px] lg:rounded-[16px] lg:p-[24px] `}
 			>
 				<button
 					onClick={() => {

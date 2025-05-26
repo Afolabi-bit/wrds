@@ -16,6 +16,10 @@ export default {
 				myPurple: "#a445ed",
 				myRed: "#ff5252",
 			},
+			boxShadow: {
+				"custom-purple": "0px 5px 30px #A445ED",
+				"custom-black": "0px 5px 30px rgba(0, 0, 0, 0.1)",
+			},
 			fontFamily: {
 				interBold: ["interBold", "sans-serif"],
 				interRegular: ["interRegular", "sans-serif"],

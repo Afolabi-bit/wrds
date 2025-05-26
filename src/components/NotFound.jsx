@@ -2,7 +2,7 @@ import Emoji from "/assets/images/emoji.png";
 
 const NotFound = () => {
 	return (
-		<div className="w-full text-center pt-[100px] md:pt-[132px] md:px-[50px] pb-[85px] mb:pb-[118px] ">
+		<div className="w-full text-center pt-[100px] md:pt-[82px] md:px-[50px] pb-[85px] md:pb-[118px] ">
 			<img
 				className="w-[64px] h-[64px] mx-auto mb-[30px] md:mb-[69px] "
 				src={Emoji}
