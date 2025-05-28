@@ -7,14 +7,18 @@ const AppContext = createContext({
 	handleDarkMode: () => {},
 });
 export const AppContextProvider = ({ children }) => {
-	const value = localStorage.getItem("isDark")
+	const darkValue = localStorage.getItem("isDark")
 		? JSON.parse(localStorage.getItem("isDark"))
 		: false;
 
+	const defaultWord = localStorage.getItem("defaultWord")
+		? localStorage.getItem("defaultWord")
+		: "welcome";
+
 	const [fontStyle, setFontStyle] = useState("Sans Serif");
-	const [searchString, setSearchString] = useState("welcome");
+	const [searchString, setSearchString] = useState(defaultWord);
 	const [data, setData] = useState([]);
-	const [isDark, setIsDark] = useState(value);
+	const [isDark, setIsDark] = useState(darkValue);
 	const [error, setError] = useState({ code: "", message: "" });
 
 	function changeFont(font) {
@@ -51,6 +55,7 @@ export const AppContextProvider = ({ children }) => {
 
 				const data = await res.json();
 				setData(data);
+				localStorage.setItem("defaultWord", searchString);
 			} catch (err) {
 				// Access custom error info
 				console.error(`Error ${err.status}: ${err.message}`);
