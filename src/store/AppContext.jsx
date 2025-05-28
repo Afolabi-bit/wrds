@@ -8,7 +8,7 @@ const AppContext = createContext({
 });
 export const AppContextProvider = ({ children }) => {
 	const value = localStorage.getItem("isDark")
-		? localStorage.getItem("isDark")
+		? JSON.parse(localStorage.getItem("isDark"))
 		: false;
 
 	const [fontStyle, setFontStyle] = useState("Sans Serif");
