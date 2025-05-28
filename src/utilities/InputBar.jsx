@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from "react";
-import Search from "../../public/assets/images/icon-search.svg";
+import Search from "/assets/images/icon-search.svg";
 import AppContext from "../store/AppContext";
 
 import SpeechRecognition, {

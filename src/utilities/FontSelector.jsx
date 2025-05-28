@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import AppContext from "../store/AppContext";
-import ArrowDown from "../../public/assets/images/icon-arrow-down.svg";
+import ArrowDown from "/assets/images/icon-arrow-down.svg";
 
 const FontSelector = () => {
 	const { fontStyle, changeFont } = useContext(AppContext);

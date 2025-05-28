@@ -1,6 +1,6 @@
-import PageBreak from "../../public/assets/images/page-break.svg";
-import Oval from "../../public/assets/images/Oval.svg";
-import PageBreakMd from "../../public/assets/images/pagebreak-md.svg";
+import PageBreak from "/assets/images/page-break.svg";
+import Oval from "/assets/images/Oval.svg";
+import PageBreakMd from "/assets/images/pagebreak-md.svg";
 
 function SynonymsAndAntonyms({ indicator, arr }) {
 	return (

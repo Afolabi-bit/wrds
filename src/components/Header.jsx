@@ -1,6 +1,4 @@
-import DictionaryIcon from "../../public/assets/images/logo.svg";
-import Moon from "../../public/assets/images/icon-moon.svg";
-import ArrowDown from "../../public/assets/images/icon-arrow-down.svg";
+import DictionaryIcon from "/assets/images/logo.svg";
 import FontSelector from "../utilities/FontSelector";
 import ToggleTheme from "../utilities/ToggleTheme";
 import InputBar from "../utilities/InputBar";

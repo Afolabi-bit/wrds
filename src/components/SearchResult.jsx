@@ -1,7 +1,7 @@
 import { useContext, useRef } from "react";
 import AppContext from "../store/AppContext";
-import PlaySoundIcon from "../../public/assets/images/icon-play.svg";
-import Source from "../../public/assets/images/icon-new-window.svg";
+import PlaySoundIcon from "/assets/images/icon-play.svg";
+import Source from "/assets/images/icon-new-window.svg";
 import WordMeaning from "../utilities/WordMeaning";
 import NotFound from "./NotFound";
 

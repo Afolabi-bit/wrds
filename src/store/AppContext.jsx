@@ -1,17 +1,20 @@
 import { createContext, useEffect, useState } from "react";
 
 const AppContext = createContext({
-	darkModeActive: null,
 	fontStyle: "",
 	changeFont: () => {},
 	handleSearchString: () => {},
+	handleDarkMode: () => {},
 });
 export const AppContextProvider = ({ children }) => {
-	const [darkModeActive, setDarkModeActive] = useState(false);
+	const value = localStorage.getItem("isDark")
+		? localStorage.getItem("isDark")
+		: false;
+
 	const [fontStyle, setFontStyle] = useState("Sans Serif");
 	const [searchString, setSearchString] = useState("keyboard");
 	const [data, setData] = useState([]);
-	const [isDark, setIsDark] = useState(false);
+	const [isDark, setIsDark] = useState(value);
 	const [error, setError] = useState({ code: "", message: "" });
 
 	function changeFont(font) {
@@ -20,6 +23,11 @@ export const AppContextProvider = ({ children }) => {
 
 	function handleSearchString(str) {
 		setSearchString(str);
+	}
+
+	function handleDarkMode() {
+		localStorage.setItem("isDark", !isDark);
+		setIsDark((prev) => !prev);
 	}
 
 	useEffect(() => {
@@ -58,13 +66,12 @@ export const AppContextProvider = ({ children }) => {
 		<AppContext
 			value={{
 				searchString,
-				darkModeActive,
 				fontStyle,
 				changeFont,
 				handleSearchString,
 				data,
 				isDark,
-				setIsDark,
+				handleDarkMode,
 				error,
 			}}
 		>

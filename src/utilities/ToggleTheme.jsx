@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import Border from "../../public/assets/images/border.svg";
-import Moon from "../../public/assets/images/icon-moon.svg";
-import DarkMoon from "../../public/assets/images/dark-moon.svg";
+import Border from "/assets/images/border.svg";
+import Moon from "/assets/images/icon-moon.svg";
+import DarkMoon from "/assets/images/dark-moon.svg";
 import AppContext from "../store/AppContext";
 
 const ToggleTheme = () => {
-	const { isDark, setIsDark } = useContext(AppContext);
+	const { isDark, handleDarkMode } = useContext(AppContext);
+
 	useEffect(() => {
 		document.documentElement.classList.toggle("dark", isDark);
 	}, [isDark]);
@@ -18,9 +19,7 @@ const ToggleTheme = () => {
 				alt="dividing line"
 			/>
 			<button
-				onClick={() => {
-					setIsDark((prev) => !prev);
-				}}
+				onClick={handleDarkMode}
 				className="group w-[71.99px] h-full flex gap-[12px] outline-none"
 			>
 				<span className="inline-block relative h-[20px] w-[40px] rounded-[10px] bg-white4 dark:bg-myPurple transition group-hover:bg-myPurple ">
