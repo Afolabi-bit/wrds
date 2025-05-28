@@ -14,7 +14,7 @@ const FontSelector = () => {
 		<div className="mr-[16px] text-right w-[98px] h-full relative md:w-[148px] ">
 			<button
 				onClick={handleOpenselect}
-				className="flex w-full justify-end  "
+				className="flex w-full h-full items-center justify-end  "
 			>
 				<span
 					className={`font-[700] not-italic text-[14px] leading-[24px] text-black3 dark:text-white1 mr-[9px] ${

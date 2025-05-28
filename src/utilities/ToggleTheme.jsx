@@ -14,13 +14,13 @@ const ToggleTheme = () => {
 	return (
 		<div className="flex justify-between gap-[19px] items-center h-full ">
 			<img
-				className="h-[32px] w-[1px]"
+				className="h-full w-[1px]"
 				src={Border}
 				alt="dividing line"
 			/>
 			<button
 				onClick={handleDarkMode}
-				className="group w-[71.99px] h-full flex gap-[12px] outline-none"
+				className="group w-[71.99px] h-full flex items-center gap-[12px] outline-none"
 			>
 				<span className="inline-block relative h-[20px] w-[40px] rounded-[10px] bg-white4 dark:bg-myPurple transition group-hover:bg-myPurple ">
 					<span className="absolute w-[14px] h-[14px] top-[3px] left-[3px] bg-white1 rounded-[50%] "></span>
