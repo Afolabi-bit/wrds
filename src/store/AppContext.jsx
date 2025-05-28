@@ -12,7 +12,7 @@ export const AppContextProvider = ({ children }) => {
 		: false;
 
 	const [fontStyle, setFontStyle] = useState("Sans Serif");
-	const [searchString, setSearchString] = useState("keyboard");
+	const [searchString, setSearchString] = useState("welcome");
 	const [data, setData] = useState([]);
 	const [isDark, setIsDark] = useState(value);
 	const [error, setError] = useState({ code: "", message: "" });
